@@ -60,11 +60,17 @@ public class Modules : MonoBehaviour
         {
             destroyShipTimer -= Time.deltaTime;
             float seconds = destroyShipTimer / destroyShipCountdownDuration;
+            FindObjectOfType<EmergencyMode>().TriggerEmergency();
 
             if (seconds <= 0)
             {
                 Debug.Log("Destroyed Ship");
             }
+        }
+        else
+        {
+            FindObjectOfType<EmergencyMode>().CancelEmergency();
+            FindObjectOfType<EmergencyMode>().isActive = false;
         }
     }
 
