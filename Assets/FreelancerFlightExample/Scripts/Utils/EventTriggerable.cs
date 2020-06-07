@@ -12,7 +12,7 @@ public class EventTriggerable : MonoBehaviour
 
     public void TriggerEvent()
     {
-        _eventToTrigger.Action();
+        _eventToTrigger.Action(this.gameObject);
     }
 
     public KeyCode GetKeyToTrigger()

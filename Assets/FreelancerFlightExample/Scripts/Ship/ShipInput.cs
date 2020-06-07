@@ -31,11 +31,11 @@ namespace FLFlight
         // How quickly the throttle reacts to input.
         private const float THROTTLE_SPEED = 0.5f;
 
-        public float Pitch { get { return pitch; } }
-        public float Yaw { get { return yaw; } }
-        public float Roll { get { return roll; } }
-        public float Strafe { get { return strafe; } }
-        public float Throttle { get { return throttle; } }
+        public float Pitch { get { return pitch; } set { pitch = value; } }
+        public float Yaw { get { return yaw; } set { yaw = value; } }
+        public float Roll { get { return roll; } set { roll = value; } }
+        public float Strafe { get { return strafe; } set { strafe = value; } }
+        public float Throttle { get { return throttle; } set { throttle = value; } }
 
         private void Update()
         {

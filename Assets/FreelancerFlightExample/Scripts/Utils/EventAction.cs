@@ -4,5 +4,7 @@
 public abstract class EventAction : ScriptableObject
 {
     public KeyCode _keyToTrigger;
-    public abstract void Action();
+    public abstract void Action(GameObject triggeredObject);
+
+    public abstract string KeyToTriggerText();
 }
