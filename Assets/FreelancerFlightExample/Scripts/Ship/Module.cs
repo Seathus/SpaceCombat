@@ -17,6 +17,13 @@ public class Module : MonoBehaviour
     public ShipModule _shipModule;
     public bool isFunctional = true;
 
+    public Material _material;
+
+    private void Start()
+    {
+        _material = GetComponent<MeshRenderer>().material;
+    }
+
     private void Update()
     {
         if (!isFunctional)
@@ -39,6 +46,12 @@ public class Module : MonoBehaviour
                     FLFlight.Ship.PlayerShip.Input.Pitch = 0;
                     break;
             }
+            
+            _material.color = Color.Lerp(Color.white, Color.red, Mathf.PingPong(Time.time, 1));
+        }
+        else
+        {
+            _material.color = Color.white;
         }
     }
 }
