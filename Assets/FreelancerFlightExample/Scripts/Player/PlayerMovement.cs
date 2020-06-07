@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isFlyingShip) return;
         
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        //GetComponent<Rigidbody>().IsSleeping() = true;
+        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         isOnStartingPlatform = Physics.Raycast(transform.position, Vector3.down, Mathf.Infinity);
